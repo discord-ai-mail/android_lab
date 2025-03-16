@@ -2,9 +2,10 @@ import streamlit as st
 
 
 def main():
+    st.title("Download ADT android development tool kit")
     st.write("http://bit.ly/35GUYzF")
 
-    st.write("layout")
+    st.title("layout")
     st.write("xml code in activity_main")
     st.code("""
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
