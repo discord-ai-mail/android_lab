@@ -11,6 +11,6 @@ if st.button("login"):
         if org_pass==password:
             ap.main()
         else:
-            st.error("password is worng contact 22ucs119")
+            st.error("password is worng contact AKM")
     else:
-        st.error("username is worng da")
+        st.error("username is worng")
