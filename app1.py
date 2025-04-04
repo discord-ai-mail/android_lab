@@ -225,7 +225,7 @@ public class activity2 extends Activity {
 
 
 
-    st.write("calculator")
+    st.title("Calculator")
     st.write("xml code")
     st.code("""
 <?xml version="1.0" encoding="utf-8"?>
@@ -362,7 +362,7 @@ public class MainActivity extends Activity {
 """)
 
 
-    st.write("business calculator")
+    st.title("Business calculator")
     st.write("XML code")
     st.code("""
 <?xml version="1.0" encoding="utf-8"?>
@@ -488,7 +488,7 @@ public class MainActivity extends Activity {
 """)
 
 
-    st.write("bouncing ball")
+    st.title("bouncing ball")
     st.write("Xml code")
     st.code("""
 <?xml version="1.0" encoding="utf-8"?>
@@ -715,7 +715,7 @@ public class MainActivity extends Activity {
 }
 """)
     st.write("color code finding website link:https://colorcodefinder.com/")
-    st.write("two ball bouncing ball")
+    st.title("two ball bouncing ball")
     st.write("activity.xml")
     st.code("""<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1322,8 +1322,120 @@ public class activity2 extends Activity {
         textViewContact.setText("ContactNO:" + contact);
     }
 }""")
-    st.title("sms send")
-    st.image("Screenshot_20250317-064949.png")
+    st.title("Send SMS")
+    st.write("XML code")
+    st.code("""<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/phoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter phone number (e.g., 5556)"
+        android:inputType="phone" />
+
+    <EditText
+        android:id="@+id/message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/phoneNumber"
+        android:layout_marginTop="16dp"
+        android:hint="Enter message"
+        android:inputType="textMultiLine" />
+
+    <Button
+        android:id="@+id/sendButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/message"
+        android:layout_marginTop="16dp"
+        android:text="Send SMS" />
+
+</RelativeLayout>""")
+    st.write("mainActivity.java code")
+    st.code("""package com.example.sms;
+
+import android.app.Activity;
+import android.app.PendingIntent;
+import android.content.Intent;
+import android.os.Bundle;
+import android.telephony.SmsManager;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+public class MainActivity extends Activity {
+    EditText phoneNumber;
+    EditText message;
+    Button sendButton;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        phoneNumber = (EditText) findViewById(R.id.phoneNumber);
+        message = (EditText) findViewById(R.id.message);
+        sendButton = (Button) findViewById(R.id.sendButton);
+
+        sendButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                sendSMSMessage();
+            }
+        });
+    }
+
+    protected void sendSMSMessage() {
+        String phoneNo = phoneNumber.getText().toString();
+        String smsMessage = message.getText().toString();
+
+        try {
+            SmsManager smsManager = SmsManager.getDefault();
+            smsManager.sendTextMessage(phoneNo, null, smsMessage, null, null);
+            Toast.makeText(getApplicationContext(), "SMS sent.", Toast.LENGTH_LONG).show();
+        } catch (Exception e) {
+            Toast.makeText(getApplicationContext(), "SMS failed, please try again.", Toast.LENGTH_LONG).show();
+            e.printStackTrace();
+        }
+    }
+}""")
+    st.write("Androidmanifest.XML file")
+    st.write("NOTE: only change the modified code")
+    st.code("""<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.sms"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />
+	<uses-permission android:name="android.permission.SEND_SMS" />
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.example.sms.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>""")
+
+    
 
     
 
