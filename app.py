@@ -17,4 +17,5 @@ if st.button("login"):
         else:
             st.error("password is worng contact AKM")
     else:
+        st.image("bg.png")
         st.error("username is worng")
