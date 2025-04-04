@@ -1437,7 +1437,8 @@ public class MainActivity extends Activity {
     st.write("when you run the sms application you must run the two emulator")
     st.write("once you application is working to enter the port number in second emulator number example:'5558' and enter message")
     st.image("sms.png")
-    
+    st.weite("port number is show in the top of the emulator app")
+    st.image("sms2.png")
 
     
 
