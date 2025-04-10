@@ -1441,7 +1441,154 @@ public class MainActivity extends Activity {
     st.image("sms2.png")
 
     
+    st.title("DIFFERENT MENUES")
+    st.write("activity_home.xml")
+    st.code("""<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/homeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Home Page"
+        android:layout_centerInParent="true"/>
+</RelativeLayout>""")
+     st.write("activity_main.xml")
+     st.code("""<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/mainTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Main Page"
+        android:layout_centerInParent="true"/>
+</RelativeLayout>""")
+      st.write("activity_content.xml")
+      st.code("""<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/contentTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Content Page"
+        android:layout_centerInParent="true"/>
+</RelativeLayout>""")
+       st.write("HomeActivity.java")
+       st.code("""package com.example.menu_app;
+import android.app.Activity;
+import android.os.Bundle;
+
+
+public class HomeActivity extends Activity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_home);
+    }
+}""")
+       st.write("MainActivity.java")
+       st.code("""package com.example.menu_app;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+
+
+public class MainActivity extends Activity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.action_home) {
+            Intent intent = new Intent(this, HomeActivity.class);
+            startActivity(intent);
+            return true;
+        } else if (id == R.id.action_content) {
+            Intent intent = new Intent(this, ContentActivity.class);
+            startActivity(intent);
+            return true;
+        } else if (id == R.id.action_exit) {
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.addCategory(Intent.CATEGORY_HOME);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+}""")
+        st.write("ContentActivity.java")
+        st.code("""package com.example.menu_app;
+
+import android.app.Activity;
+import android.os.Bundle;
+
+
+public class ContentActivity extends Activity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_content);
+    }
+}""")
+        st.write("Create a file named main_menu.xml in the res/menu directory")
+        st.code("""<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_home"
+        android:title="Home" />
+    <item
+        android:id="@+id/action_content"
+        android:title="Content" />
+    <item
+        android:id="@+id/action_exit"
+        android:title="Exit" />
+</menu>""")
+	st.write("AndroidManifest.xml")
+	st.code("""<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.yourapp">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.YourApp">
+        <activity android:name=".HomeActivity"></activity>
+        <activity android:name=".ContentActivity"></activity>
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>""")
 
 
     
