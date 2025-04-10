@@ -1455,8 +1455,8 @@ public class MainActivity extends Activity {
         android:text="Home Page"
         android:layout_centerInParent="true"/>
 </RelativeLayout>""")
-     st.write("activity_main.xml")
-     st.code("""<?xml version="1.0" encoding="utf-8"?>
+    st.write("activity_main.xml")
+    st.code("""<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -1468,8 +1468,8 @@ public class MainActivity extends Activity {
         android:text="Main Page"
         android:layout_centerInParent="true"/>
 </RelativeLayout>""")
-      st.write("activity_content.xml")
-      st.code("""<?xml version="1.0" encoding="utf-8"?>
+    st.write("activity_content.xml")
+    st.code("""<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -1481,8 +1481,8 @@ public class MainActivity extends Activity {
         android:text="Content Page"
         android:layout_centerInParent="true"/>
 </RelativeLayout>""")
-       st.write("HomeActivity.java")
-       st.code("""package com.example.menu_app;
+    st.write("HomeActivity.java")
+    st.code("""package com.example.menu_app;
 import android.app.Activity;
 import android.os.Bundle;
 
@@ -1494,8 +1494,8 @@ public class HomeActivity extends Activity {
         setContentView(R.layout.activity_home);
     }
 }""")
-       st.write("MainActivity.java")
-       st.code("""package com.example.menu_app;
+    st.write("MainActivity.java")
+    st.code("""package com.example.menu_app;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -1540,8 +1540,8 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 }""")
-        st.write("ContentActivity.java")
-        st.code("""package com.example.menu_app;
+    st.write("ContentActivity.java")
+    st.code("""package com.example.menu_app;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -1554,8 +1554,8 @@ public class ContentActivity extends Activity {
         setContentView(R.layout.activity_content);
     }
 }""")
-        st.write("Create a file named main_menu.xml in the res/menu directory")
-        st.code("""<?xml version="1.0" encoding="utf-8"?>
+    st.write("Create a file named main_menu.xml in the res/menu directory")
+    st.code("""<?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/action_home"
