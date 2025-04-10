@@ -1567,8 +1567,8 @@ public class ContentActivity extends Activity {
         android:id="@+id/action_exit"
         android:title="Exit" />
 </menu>""")
-	st.write("AndroidManifest.xml")
-	st.code("""<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    st.write("AndroidManifest.xml")
+    st.code("""<manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.yourapp">
 
     <application
