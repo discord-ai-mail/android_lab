@@ -1591,7 +1591,7 @@ public class ContentActivity extends Activity {
 </manifest>""")
 
 
-    
+    st.image("menu.png")
 
 
 
