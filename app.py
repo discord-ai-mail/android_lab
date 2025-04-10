@@ -1,6 +1,7 @@
 import streamlit as st
 import app1 as ap
-st.markdown("""<center><h1 style="color:yellow;">SJC KIDDOS</h1></center>""",unsafe_allow_html=True)
+
+
 org_name="admin"
 org_pass="password"
 name=st.empty()
