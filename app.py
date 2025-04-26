@@ -14,8 +14,8 @@ if st.button("login"):
         if org_pass == password:
             name.empty()
             passwo.empty()
-            #ap.main()
-            st.title("http://android-akm.streamlit.app/Nagaraju/juju/Pu-error")
+            ap.main()
+            #st.title("http://android-akm.streamlit.app/Nagaraju/juju/Pu-error")
         else:
             st.error("Password is wrong. Contact AKM.")
     else:
